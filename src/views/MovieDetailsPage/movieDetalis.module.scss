@@ -1,0 +1,57 @@
+.box {
+  padding-left: 40px;
+}
+.img {
+  width: 300px;
+}
+.boxInformationMovie {
+  display: flex;
+}
+.informationMovieText {
+  margin-left: 50px;
+}
+.movieDescription {
+  width: 800px;
+}
+.userScore {
+  background-color: gold;
+  border-radius: 10px;
+  padding: 2px 9px;
+  color: white;
+}
+.genresList {
+  //   display: flex;
+  flex-wrap: wrap;
+  width: 800px;
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(6, 3fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 1em;
+  list-style: none;
+}
+.genresItem {
+  background-color: #33bb63ab;
+  border-radius: 50px;
+}
+.link {
+  font-size: 20px;
+  font-weight: 400;
+  color: black;
+  padding: 5px 10px;
+  background-color: #37bd37;
+  border-radius: 50px;
+}
+.link:last-child {
+  margin-left: 10px;
+}
+.buttonGoBack {
+  font-size: 20px;
+  font-weight: 400;
+  color: black;
+  padding: 5px 10px;
+  background-color: #45a9a4;
+  border-radius: 50px;
+  border: none;
+  margin: 10px;
+}

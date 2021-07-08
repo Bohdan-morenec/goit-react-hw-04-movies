@@ -1,0 +1,31 @@
+.navigationList {
+  display: flex;
+  margin-top: 0px;
+  padding-top: 25px;
+}
+
+.navigationItem {
+  background-color: #a7cecc;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.navigationItem:first-child {
+  margin-right: 30px;
+}
+
+.navigationLink {
+  font-size: 20px;
+  font-weight: 400;
+  color: black;
+  padding: 10px;
+}
+
+.navigationBox {
+  padding-bottom: 10px;
+  background-color: #a7cecc63;
+}
+
+.activeLiink {
+  color: beige;
+}
