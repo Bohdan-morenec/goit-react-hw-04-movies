@@ -20,19 +20,23 @@ class MovieDetails extends Component {
     genres: [],
     poster_path: null,
     vote_average: null,
+    location: null,
   };
 
   async componentDidMount() {
     const { params } = this.props.match;
+    const { location } = this.props;
 
     const response = await getMovieDetailsPage(params.movieId);
 
-    this.setState({ ...response.data });
+    this.setState({ ...response.data, location: location });
   }
 
   returnPreviousPage = () => {
-    const { location, history } = this.props;
+    const { history } = this.props;
+    const { location } = this.state;
 
+    console.log(location);
     if (location.state && location.state.from) {
       return history.push(location.state.from);
     }

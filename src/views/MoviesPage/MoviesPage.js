@@ -13,6 +13,16 @@ class moviesPages extends Component {
     movies: null,
   };
 
+  componentDidMount() {
+    const getMoviesLocal = localStorage.getItem("moviesLolcal");
+    const movieSearchValueLocal = localStorage.getItem("movieSearchValueLocal");
+
+    this.setState({
+      movies: JSON.parse(getMoviesLocal),
+      movieSearchValue: movieSearchValueLocal,
+    });
+  }
+
   addmovieSearchValue = (e) => {
     const { value } = e.currentTarget;
 
@@ -21,11 +31,15 @@ class moviesPages extends Component {
 
   async getMovies() {
     const { movieSearchValue } = this.state;
+
     if (!movieSearchValue) {
       return notifications();
     }
 
     const response = await getMoviesPage(movieSearchValue);
+
+    localStorage.setItem("moviesLolcal", JSON.stringify(response.data.results));
+    localStorage.setItem("movieSearchValueLocal", movieSearchValue);
 
     this.setState({ movies: response.data.results });
   }
